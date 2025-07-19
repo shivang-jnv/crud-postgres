@@ -1,6 +1,6 @@
 # Simple CRUD App
 
-This is a basic Node.js CRUD (Create, Read, Update, Delete) API using Express and PostgreSQL.
+This is a basic Node.js CRUD API using Express and PostgreSQL.
 
 ## Features
 
@@ -14,6 +14,7 @@ This is a basic Node.js CRUD (Create, Read, Update, Delete) API using Express an
 - [Node.js](https://nodejs.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 - npm (comes with Node.js)
+- [Postman](https://www.postman.com/)
 - A PostgreSQL database named `mydb` with a `users` table:
 
 ```sql
@@ -35,39 +36,54 @@ CREATE TABLE users (
    ```
 
 3. Update database credentials in `app.js` if needed.
-
 4. Start the server:
 
    ```sh
    node app.js
    ```
 
-## API Endpoints
+## Testing the API with Postman
 
-| Method | Endpoint         | Description         |
-|--------|------------------|---------------------|
-| POST   | `/users`         | Create a new user   |
-| GET    | `/users`         | Get all users       |
-| PUT    | `/users/:id`     | Update a user       |
-| DELETE | `/users/:id`     | Delete a user       |
+1. **Open Postman** and create a new request.
 
-## Example Requests
+2. **Set the request type and URL:**
 
-**Create a user**
-```sh
-curl -X POST -H "Content-Type: application/json" -d '{"name":"Alice","email":"alice@example.com"}' http://localhost:3000/users
-```
+   - URL: `http://localhost:3000/users`
 
-**Get all users**
-```sh
-curl http://localhost:3000/users
-```
+3. **API Endpoints:**
 
-**Update a user**
-```sh
-curl -X PUT -H "Content-Type: application/json" -d '{"name":"Bob","email":"bob@example.com"}' http://localhost:3000/users/1
-```
+   ### Create a User
 
-**Delete a user**
-```sh
-curl -X DELETE http://localhost:3000/users/1
+   - **Method:** POST
+   - **URL:** `http://localhost:3000/users`
+   - **Body:** Select `raw` and `JSON`, then enter:
+     ```json
+     {
+       "name": "Alice",
+       "email": "alice@example.com"
+     }
+     ```
+
+   ### Get All Users
+
+   - **Method:** GET
+   - **URL:** `http://localhost:3000/users`
+
+   ### Update a User
+
+   - **Method:** PUT
+   - **URL:** `http://localhost:3000/users/1`
+   - **Body:** Select `raw` and `JSON`, then enter:
+     ```json
+     {
+       "name": "Bob",
+       "email": "bob@example.com"
+     }
+     ```
+
+   ### Delete a User
+
+   - **Method:** DELETE
+   - **URL:** `http://localhost:3000/users/1`
+
+4. **Send the request** and check the response in Postman.
