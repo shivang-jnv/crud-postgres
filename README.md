@@ -39,7 +39,7 @@ CREATE TABLE users (
 4. Start the server:
 
    ```sh
-   node app.js
+   npm run dev
    ```
 
 ## Testing the API with Postman
